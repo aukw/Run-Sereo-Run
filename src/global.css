@@ -1,0 +1,41 @@
+body
+{
+	background-color:black;
+	color:white;
+	font-family:"Verdana", sans-serif;
+}
+
+#canvas
+{
+	border:solid 2px white;
+	float:left;
+}
+
+.header
+{
+	border:solid 1px white;
+	color:white;
+	background-color:black;
+}
+
+.content
+{
+	background-color:white;
+	display:block;
+	padding:10px;
+	color:black;
+}
+
+a
+{
+	background-color:white;
+	text-decoration:none;
+	display:block;
+	padding:10px;
+	color:black;
+}
+
+a:hover
+{
+	font-weight:bold;
+}

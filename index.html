@@ -1,0 +1,55 @@
+<html>
+<head>
+<meta charset='utf-8'></meta>
+<title>SereoRunner</title>
+<link rel='StyleSheet' href='src/global.css' type='text/css' media='all' />
+</head>
+<body>
+<table>
+<tr>
+<td><div id='canvas'></td>
+<td style='text-align:center; padding-left:25px'>
+	<h1>Run, <font color='yellow'>Sereo</font>, Run!</h1>
+	<div class='header'>Nueva partida</div>
+	<a href='javascript:GAME.EVENTS.reend(0)'>Principiante</a>
+	<a href='javascript:GAME.EVENTS.reend(1)'>Intermedio</a>
+	<a href='javascript:GAME.EVENTS.reend(2)'>Experto</a>
+	<a href='javascript:GAME.EVENTS.reend(3)'>Meriforero</a>
+	<div style='border:solid 1px white; color:black; padding:5px; background-color:white'><input type='checkbox' name='options' id='cEnd'>Modo infinito</input></div>
+	<br>
+	<div class='header'>Controles</div>
+	<div class='content'>&larr; &rarr; / AD: Moverse<br>ESPACIO: Saltar</div>
+	<br>
+	<div class='header'>Tip</div>
+	<div class='content'>¡Recoge a los Nachos que veas por el camino!</div>
+	<br>
+	<div class='header'>Opciones</div>
+	<div class='content'><input type='checkbox' name='options' id='cMusic' checked>Música</input></div>
+	<br>
+	guille7: Programación<br>
+	FBurning: Arte y diseño
+</td>
+</tr>
+</table>
+<script src='lib/phaser.min.js'></script>
+<script src='src/class/entities/player.js'></script>
+<script src='src/class/entities/entities.js'></script>
+<script src='src/class/hub/life.js'></script>
+<script src='src/class/game.js'></script>
+<script src='src/main.js'></script>
+<script>
+document.getElementById("cMusic").addEventListener("click", function(){
+	if (!GAME.STATS || !GAME.SOUND) return 0;
+	document.getElementById("canvas").firstChild.focus();
+	if (!GAME.STATS.cSound) {
+		if (GAME.STATS.paused) return 0;
+		GAME.STATS.cSound = true;
+		if (GAME.SOUND) GAME.SOUND.music.play("", 0, 0.6, true);
+	} else {
+		GAME.STATS.cSound = false;
+		if (GAME.SOUND) GAME.SOUND.music.stop();
+	}
+}, false);
+</script>
+</body>
+</html>
